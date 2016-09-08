@@ -1,10 +1,9 @@
 # ng2-jsoneditor
-___
+
 Simple angular 2 wrapper for [jsoneditor](https://github.com/josdejong/jsoneditor)
 
-
 # Usage
-___
+
 Install with npm
 ```sh
 npm install --save ng2-jsoneditor
