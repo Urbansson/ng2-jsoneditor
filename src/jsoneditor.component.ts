@@ -1,0 +1,85 @@
+import { Component, ElementRef, Input } from '@angular/core';
+
+import { JsonEditorOptions } from './jsoneditor.options';
+
+import * as jsonEditor from 'jsoneditor';
+import 'jsoneditor/dist/jsoneditor.min.css';
+
+@Component({
+    selector: 'json-editor',
+    template: `<div></div>`
+})
+export class JsonEditorComponent {
+    private editor: any;
+    private optionsDiffer: any;
+    private dataDiffer: any;
+
+    @Input('options') 
+    private options: JsonEditorOptions;
+
+    @Input('data') 
+    private data: Object;
+
+    constructor(private rootElement: ElementRef) { }
+
+    ngOnInit() {
+        
+        if (null == this.options) {
+            throw new Error("'options' is required");
+        }
+
+        if (null == this.data) {
+            this.data = {};
+        }
+
+        this.editor = new jsonEditor(this.rootElement.nativeElement, this.options, this.data);
+    }
+
+    public collapseAll() {
+        this.editor.collapseAll();
+    }
+
+    public destroy() {
+        this.editor.destroy();
+    }
+
+    public expandAll() {
+        this.editor.expandAll();
+    }
+
+    public focus() {
+        this.editor.focus();
+    }
+
+    public set(json: JSON) {
+        this.editor.set(json);
+    }
+
+    public setMode(mode: String) {
+        this.editor.setMode(mode);
+    }
+
+    public setName(name: String) {
+        this.editor.setName(name);
+    }
+
+    public setSchema(schema: any) {
+        this.editor.setSchema(schema);
+    }
+
+    public get(): JSON {
+        return this.editor.get();
+    }
+
+    public getMode(): String {
+        return this.editor.getMode();
+    }
+
+    public getName(): String {
+        return this.editor.getName();
+    }
+
+    public getText(): String {
+        return this.editor.getText();
+    }
+}
