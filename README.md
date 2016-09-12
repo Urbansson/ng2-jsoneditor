@@ -62,7 +62,8 @@ export class DetailComponent {
 
 See  jsonmodel's [api](https://github.com/josdejong/jsoneditor/blob/master/docs/api.md) docs for more detailed usage.
 
-If you are building with webpack you also need to add this to your webpack config due to some warnings coming from ajv see (#117)[https://github.com/epoberezkin/ajv/issues/117]
+If you are building with webpack you also need to add this to your webpack config due to some warnings coming from ajv see 
+[#117](https://github.com/epoberezkin/ajv/issues/117).
 ```javascript
 plugins: [
   new webpack.IgnorePlugin(/regenerator|nodent|js-beautify/, /ajv/),
