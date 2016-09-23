@@ -1,6 +1,6 @@
 {
   "name": "ng2-jsoneditor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Angular 2 component for jsoneditor",
   "main": "ng2-jsoneditor.js",
   "scripts": {
@@ -27,16 +27,16 @@
     "typescript": "2.0.0"
   },
   "dependencies": {
-    "@angular/common": "2.0.0-rc.6",
-    "@angular/compiler": "2.0.0-rc.6",
-    "@angular/core": "2.0.0-rc.6",
-    "@angular/forms": "^2.0.0-rc.6",
-    "@angular/http": "2.0.0-rc.6",
-    "@angular/platform-browser": "2.0.0-rc.6",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.6",
-    "@angular/platform-server": "2.0.0-rc.6",
-    "@angular/router": "3.0.0-rc.2",
+    "@angular/common": "2.0.0",
+    "@angular/compiler": "2.0.0",
+    "@angular/core": "2.0.0",
+    "@angular/forms": "2.0.0",
+    "@angular/http": "2.0.0",
+    "@angular/platform-browser": "2.0.0",
+    "@angular/platform-browser-dynamic": "2.0.0",
+    "@angular/platform-server": "2.0.0",
+    "@angular/router": "3.0.0",
     "jsoneditor": "^5.5.7",
-    "rxjs": "5.0.0-beta.11"
+    "rxjs": "5.0.0-beta.12"
   }
 }
