@@ -2,7 +2,9 @@ import { Component, ElementRef, Input } from '@angular/core';
 
 import { JsonEditorOptions } from './jsoneditor.options';
 
-import * as jsonEditor from 'jsoneditor';
+declare var editor: any;
+var editor = require('jsoneditor');
+
 import 'jsoneditor/dist/jsoneditor.min.css';
 
 @Component({
@@ -14,16 +16,16 @@ export class JsonEditorComponent {
     private optionsDiffer: any;
     private dataDiffer: any;
 
-    @Input('options') 
+    @Input('options')
     private options: JsonEditorOptions;
 
-    @Input('data') 
+    @Input('data')
     private data: Object;
 
     constructor(private rootElement: ElementRef) { }
 
     ngOnInit() {
-        
+
         if (null == this.options) {
             throw new Error("'options' is required");
         }
@@ -31,8 +33,8 @@ export class JsonEditorComponent {
         if (null == this.data) {
             this.data = {};
         }
-
-        this.editor = new jsonEditor(this.rootElement.nativeElement, this.options, this.data);
+        
+        this.editor = new editor(this.rootElement.nativeElement, this.options, this.data);
     }
 
     public collapseAll() {
@@ -55,11 +57,11 @@ export class JsonEditorComponent {
         this.editor.set(json);
     }
 
-    public setMode(mode: String) {
+    public setMode(mode: string) {
         this.editor.setMode(mode);
     }
 
-    public setName(name: String) {
+    public setName(name: string) {
         this.editor.setName(name);
     }
 
@@ -71,15 +73,17 @@ export class JsonEditorComponent {
         return this.editor.get();
     }
 
-    public getMode(): String {
+    public getMode(): string {
         return this.editor.getMode();
     }
 
-    public getName(): String {
+    public getName(): string {
         return this.editor.getName();
     }
 
-    public getText(): String {
+    public getText(): string {
         return this.editor.getText();
     }
+
+    
 }

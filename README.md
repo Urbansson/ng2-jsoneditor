@@ -9,17 +9,19 @@ Install with npm
 npm install --save ng2-jsoneditor
 ```
 
-Import the component
+Import the editor module
 ```typescript
-import { JsonEditorComponent } from 'ng2-jsoneditor/ng2-jsoneditor'
+import { JSONEditorModule } from 'ng2-jsoneditor';
 ```
 
-Include it in your module
+Include it in your root module
 
 ```typescript
 @NgModule({
-  declarations: [
-    JsonEditorComponent
+  imports: [
+    ...
+    JSONEditorModule,
+    ...
   ]
 })
 export default class AppModule {}
@@ -36,7 +38,7 @@ Add the component to the template
 Create a component to set options and call methods on the jsoneditor
 ```typescript
 import { Component, ViewChild } from '@angular/core';
-import { JsonEditorComponent, JsonEditorOptions } from 'ng2-jsoneditor/ng2-jsoneditor';
+import { JsonEditorComponent, JsonEditorOptions } from 'ng2-jsoneditor';
 
 @Component({
   ...
