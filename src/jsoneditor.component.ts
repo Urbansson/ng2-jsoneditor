@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input } from '@angular/core';
 
-import { JsonEditorOptions } from './jsoneditor.options';
+import { JsonEditorOptions, JsonEditorMode } from './jsoneditor.options';
 
 declare var editor: any;
 var editor = require('jsoneditor');
@@ -33,7 +33,7 @@ export class JsonEditorComponent {
         if (null == this.data) {
             this.data = {};
         }
-        
+
         this.editor = new editor(this.rootElement.nativeElement, this.options, this.data);
     }
 
@@ -57,7 +57,7 @@ export class JsonEditorComponent {
         this.editor.set(json);
     }
 
-    public setMode(mode: string) {
+    public setMode(mode: JsonEditorMode) {
         this.editor.setMode(mode);
     }
 
@@ -73,8 +73,8 @@ export class JsonEditorComponent {
         return this.editor.get();
     }
 
-    public getMode(): string {
-        return this.editor.getMode();
+    public getMode(): JsonEditorMode {
+        return this.editor.getMode() as JsonEditorMode;
     }
 
     public getName(): string {
@@ -85,5 +85,5 @@ export class JsonEditorComponent {
         return this.editor.getText();
     }
 
-    
+
 }
