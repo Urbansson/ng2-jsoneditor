@@ -1,6 +1,6 @@
 {
   "name": "ng2-jsoneditor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "JSON Editor for Angular 2",
   "main": "index.js",
   "scripts": {
