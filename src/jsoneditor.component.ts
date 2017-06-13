@@ -17,23 +17,14 @@ export class JsonEditorComponent {
     private dataDiffer: any;
 
     @Input('options')
-    private options: JsonEditorOptions;
+    private options: JsonEditorOptions = new JsonEditorOptions();
 
     @Input('data')
-    private data: Object;
+    private data: Object = {};
 
     constructor(private rootElement: ElementRef) { }
 
     ngOnInit() {
-
-        if (null == this.options) {
-            throw new Error("'options' is required");
-        }
-
-        if (null == this.data) {
-            this.data = {};
-        }
-
         this.editor = new editor(this.rootElement.nativeElement, this.options, this.data);
     }
 
