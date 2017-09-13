@@ -1,4 +1,14 @@
-# ng2-jsoneditor
+#  --- DEPRICATED ---
+
+Use typings instead:
+
+https://github.com/typings/typings
+
+https://github.com/DefinitelyTyped/DefinitelyTyped
+
+https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/jsoneditor
+
+# ng2-jsoneditor 
 
 Simple angular 2 wrapper for [jsoneditor](https://github.com/josdejong/jsoneditor)
 
